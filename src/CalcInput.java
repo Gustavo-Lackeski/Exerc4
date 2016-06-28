@@ -6,6 +6,7 @@ class CalcEngine {
     int value;
     int keep;
     char todo;
+    String result;
     void BinOp (char op){
         keep = value;
         value = 0;
@@ -33,21 +34,28 @@ class CalcEngine {
         else if (todo == '/')
             try{
                 value = keep / value;
+                result = Integer.toString(value);
             }
             catch(java.lang.ArithmeticException e){
-                System.out.println("Divisao por zero!");
+                result = "Divisao por zero!";
+                return;
             }           
-        keep = 0;            
+        keep = 0;
+        result = Integer.toString(value);
     }
     void digit (int x){
         value = value*10 + x;
+    }
+    void clear(){
+        value = 0;
+        keep = 0;
     }
     CalcEngine(){
         value = 0;
         keep = 0;
     }
-    int GetValue() { 
-        return value;
+    String GetResult() { 
+        return result;
     }
 }
 public class CalcInput {
@@ -58,7 +66,7 @@ public class CalcInput {
         stream = new BufferedReader(input);
         engine = e;        
     }       
-    void run(){
+   /* void run(){
         for(; ;){
             System.out.print("[" + engine.GetValue() + "]");
             String m = null;
@@ -76,16 +84,18 @@ public class CalcInput {
                 else if (c == '/') engine.div();
                 else if (c >= '0' && c<='9') engine.digit(c - '0');
                 else if (c == '=') engine.Compute();
-                else if (c == 'c' || c == 'C') engine.sub();        
+                else if (c == 'c' || c == 'C') engine.clear();
                       
                
             }            
         }
-    }
+    }*/
     public static void main(String[] args) throws Exception {
-        CalcEngine e = new CalcEngine();
-        CalcInput x = new CalcInput(e);
-        x.run();        
+    //    CalcEngine e = new CalcEngine();
+    //    CalcInput x = new CalcInput(e);
+      //  x.run();
+          Interface calc = new Interface();
+          calc.setVisible(true);
     }
     
 }

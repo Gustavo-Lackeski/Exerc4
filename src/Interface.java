@@ -224,11 +224,12 @@ public class Interface extends javax.swing.JFrame {
                     .addComponent(botao3)
                     .addComponent(multiplicar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(dividir)
-                    .addComponent(botao0)
-                    .addComponent(botaoC)
-                    .addComponent(butaoIgual, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(butaoIgual, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(dividir)
+                        .addComponent(botao0)
+                        .addComponent(botaoC)))
                 .addContainerGap())
         );
 
